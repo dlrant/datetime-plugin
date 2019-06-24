@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>layDate快速使用</title>
+  <link rel="stylesheet" href="./css/layui.css">
+  <link rel="stylesheet" type="text/css" href="./css/style.css" />
+  <link rel="stylesheet" type="text/css" href="./css/layout.css" />
+<style type="text/css">
+
+
+</style>
+
+</head>
+<body>
+
+
+<!-- <button class="layui-btn" id="btn_ifram">选择时间</button> -->
+
+
+<!-- <input type="text" name="" style="width: 30%;" class="layui-input" id="input1">
+<input type="text" name=""  style="width: 30%;" class="layui-input" id="input2"> -->
+
+
+
+
+  <div class="control-bar bg-iframe fl" id="control-bar">
+
+    <div class="fl time-select-bar  margin-big-left relative" >
+        <div class="select-bar-item fl "><!--添加cur-->
+            <input readonly class="text trackable " memo="{id:'time_selt'}" id="date-select" value="自定义时间段">
+            <a class="dropdown"></a>
+        </div>
+        <!--自定义时间段-->
+        <div class="calendar-box" style="width:732px;top: 32px;">  
+          <div class=" clearfix">                             
+              <div style="width:560px" class="fl border-right">
+                  <div style="float: left;"> 
+                      <label>开始时间：</label><span id="testView1"></span>
+                      <div id="test1"></div>
+                  </div>
+                  <div style="float: left;">
+                      <div><label>结束时间：</label><span id="testView2"></span></div>
+                      <div id="test2"></div>
+                  </div>
+              </div>
+            
+              <div class="fl padding-big-left text-gray-white text-lh-largest padding-big-top text-big">
+                 <div class="">最近7天</div>
+                 <div class="">最近30天</div>
+                 <div class="">最近60天</div>
+                 <div class="">从开始截止今天</div>
+              </div>
+          </div>
+          <div class="btn-bar clearfix">
+            <div class="date-change">
+              <input type="button" value="确定" id="change-date" class=" button  bg-blue">&nbsp;&nbsp;&nbsp;
+              <input type="button" value="取消" id="cancel-change-date" class="button">
+            </div>
+         </div>
+         
+       </div> 
+       <!--自定义时间段-->   
+     </div>
+  </div>
+
+
+
+<script src="./js/jquery-3.4.1.min.js"></script>
+<script src="./js/layui.all.js"></script>
+<!-- <script type="text/javascript" src="./js/select.js"></script> -->
+
+<script>
+layui.use('laydate', function(){
+  var laydate = layui.laydate;
+
+    //日期范围
+    laydate.render({
+      elem: '#test1'
+      ,position: 'static'
+      ,showBottom: false
+      ,change: function(value, date){ //监听日期被切换
+        // lay('#testView1').html(value);
+        // lay('#input1').val(value);
+      }
+    });
+
+    laydate.render({
+      elem: '#test2'
+      ,position: 'static'
+      ,showBottom: false
+      ,change: function(value, date){ //监听日期被切换
+        // lay('#testView2').html(value);
+        // lay('#input2').val(value);
+      }
+    });
+
+});
+
+
+ $(".trackable").click(function(){
+    $('.calendar-box').toggle();
+
+});
+
+//页面层-自定义
+
+// $("#btn_ifram").click(function(){
+//     var res_html = $('.content').html();
+//     layer.open({
+//         type: 1,
+//         title: false,
+//         closeBtn: 0,
+//         shadeClose: true,
+//         skin: 'show_div',
+//         content: res_html,
+//     });
+//   });
+
+
+</script>
+</body>
+</html>
+
+
+
+
+ 
+
+
+
